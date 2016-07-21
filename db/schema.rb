@@ -19,9 +19,14 @@ ActiveRecord::Schema.define(version: 20160721144534) do
     t.text     "ingredient_list"
     t.text     "instructions"
     t.integer  "expected_time"
+
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
