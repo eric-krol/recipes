@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.cant-see-me {
+  display: none;
+}
 
  .container{
    background-color: rgba(255,255,255,0.8);
