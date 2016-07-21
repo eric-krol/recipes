@@ -1,0 +1,46 @@
+<%= form_for(@recipe) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% @recipe.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Recipe Title" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control", rows: 20, placeholder: "How did you learn this recipe?" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :ingredient_list, class: "form-control", rows: 20, placeholder: "Please list the ingredients for this recipe." %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :instructions, class: "form-control", rows:20, placeholder: "How do you make this recipe?" %>
+  </div>
+
+  <div class="form-group">
+    <h4>How many minutes does it take to complete this recipe?</h4>
+    <%= f.number_field :expected_time, class: "form-control", placeholder: 0 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.number_field :user_id, class: "form-control cant-see-me", value: current_user.id%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+
+
+
+<% end %>
