@@ -1,5 +1,10 @@
 class RecipesController < ApplicationController
   def index
+    @recipes = Recipe.all
+  end
+
+  def user_recipes
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -38,7 +43,12 @@ class RecipesController < ApplicationController
 
   private
 
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
   def recipe_params
     params.require(:recipe).permit(:title,:description,:ingredient_list,:instructions,:expected_time,:avatar, :user_id)
   end
+
 end
