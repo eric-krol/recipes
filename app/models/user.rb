@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :recipes
+  has_many :comments
 
 
-  # ratyrate_rater 
+  # ratyrate_rater
 
 end

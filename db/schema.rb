@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724174116) do
+ActiveRecord::Schema.define(version: 20160725015518) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20160724174116) do
     t.float    "avg",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment_entry"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "recipe_id"
+    t.integer  "user_id"
   end
 
   create_table "overall_averages", force: :cascade do |t|

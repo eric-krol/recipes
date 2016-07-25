@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   root 'recipes#index'
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: :create
+  end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

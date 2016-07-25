@@ -11,6 +11,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def show
+    @comment = Comment.new
+  end
+  
   def new
     @recipe = Recipe.new
   end
