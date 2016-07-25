@@ -1,3 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
 <h1>Recipes</h1>
-  <div class="row">
-    
+<div class="row">
+  <% @recipes.each do |recipe| %>
+
+      <h1><%= link_to recipe.title, recipe %></h1>
+      <p><%= recipe.description %></p>
+      <p>Ingredient Count: <%= recipe.ingredient_list.scan(/(\w|-)+/).size %></p>
+
+      <!-- Eric: please include the following 'if statement' around your code for each recipe's 'edit' and 'delete' buttons on this page.  Ensures that only recipes that the current user 'owns' are editable:  if current_user.id == recipe.user.id -->
+
+
+<% end %>

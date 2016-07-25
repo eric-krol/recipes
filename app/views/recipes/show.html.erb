@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+  <h1><%= @recipe.title %></h1>
+  <p><strong>Description:  </strong> <%= @recipe.description %></p>
+  <p><strong>Ingredients:  </strong> <%= @recipe.ingredient_list %></p>
+  <p><strong>Instructions:  </strong> <%= @recipe.instructions %></p>
+  <!-- # above is the line of code to incorporate the star ratings  -->
+
+  <!-- # Eric: please include the following 'if statement' around your code for each recipe's 'edit' and 'delete' buttons on this page.  Ensures that only recipes that the current user 'owns' are editable:  if current_user.id == recipe.user.id -->
+
+<div>
+  <%= render 'comments/form' %>
+</div>
