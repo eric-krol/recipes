@@ -24,3 +24,8 @@
    padding-bottom: 10px;
    border-radius: 10px;
  }
+
+ body {
+  background: url("recipe_image.jpeg") no-repeat;
+  background-size: cover;
+}
