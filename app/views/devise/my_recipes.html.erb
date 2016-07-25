@@ -1,0 +1,29 @@
+<% current_user.recipes.each do |recipe| %>
+  <div class="col-md-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <div class= "pull-right"><%= image_tag recipe.user.avatar.url(:thumb) %></div>
+        <h3><%= link_to recipe.title, recipe %></h3>
+        <h5>by <%= recipe.user.username %></h5>
+        <div class="timestamp"><%= recipe.updated_at.strftime('%x')%> at <%= recipe.updated_at.strftime('%r')%></div>
+      </div>
+
+      <div class="panel-body ">
+        <%= truncate(recipe.description, length:300, seperator:' ') %>
+        <%= link_to "Read More",recipe %>
+      </div>
+      <div class="panel-body ">
+        <%= truncate(recipe.ingredient_list, length:300, seperator:' ') %>
+        <%= link_to "Read More",recipe %>
+      </div>
+      <div class="panel-body ">
+        <%= truncate(recipe.instructions, length:300, seperator:' ') %>
+        <%= link_to "Read More",recipe %>
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-warning" %>
+        <%= link_to 'Delete', recipe, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+<% end %>
