@@ -26,6 +26,6 @@
  }
 
  body {
-  background: url("recipe_image.jpeg") no-repeat;
+  background: url("background_image.jpg") no-repeat;
   background-size: cover;
 }
